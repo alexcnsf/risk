@@ -13,6 +13,7 @@ import copy
 Territory = namedtuple('Territory', ['territory_id', 'player_id', 'armies'])
 Move = namedtuple('Attack', ['from_territory_id', 'from_armies', 'to_territory_id', 'to_player_id', 'to_armies'])
 
+#setup
 
 class Board(object):
     """
@@ -512,6 +513,7 @@ class Board(object):
         else:
             plt.tight_layout()
             plt.savefig(filename, bbox_inches='tight')
+#4/22
 
     @staticmethod
     def plot_single(territory_id, player_id, armies):
@@ -616,6 +618,7 @@ class Board(object):
         if n < 1:
             raise ValueError('Board: cannot set the number of armies to <1 ({tid}, {n}).'.format(tid=territory_id, n=n))
         self.data[territory_id] = Territory(territory_id, self.owner(territory_id), n)
+#4/24
 
     def add_armies(self, territory_id, n):
         """
